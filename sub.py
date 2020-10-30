@@ -30,6 +30,7 @@ def login(s: requests.Session, username, password):
 
     # print(r.text)
     if r.json().get('m') != "操作成功":
+        print(payload)
         print(r.text)
         print("登录失败")
         exit(1)
