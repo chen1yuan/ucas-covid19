@@ -51,7 +51,7 @@ def login(s: requests.Session, username, password):
         "username": username,
         "password": password
     }
-    r = s.post("https://app.ucas.ac.cn/uc/wap/login/check", data=payload)
+    r = s.post("https://app.ucas.ac.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.ucas.ac.cn%2Fsite%2FapplicationSquare%2Findex%3Fsid%3D2", data=payload)
 
     # print(r.text)
     if r.json().get('m') != "操作成功":
@@ -63,7 +63,7 @@ def login(s: requests.Session, username, password):
 
 
 def get_daily(s: requests.Session):
-    daily = s.get("https://app.ucas.ac.cn/ncov/api/default/daily?xgh=0&app_id=ucas")
+    daily = s.get("https://app.ucas.ac.cn/site/applicationSquare/index?sid=2")
     # info = s.get("https://app.ucas.ac.cn/ncov/api/default/index?xgh=0&app_id=ucas")
     j = daily.json()
     d = j.get('d', None)
