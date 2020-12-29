@@ -51,7 +51,7 @@ def login(s: requests.Session, username, password):
         "username": username,
         "password": password
     }
-    r = s.post("https://app.ucas.ac.cn/uc/wap/login?redirect=https%3A%2F%2Fapp.ucas.ac.cn%2Fsite%2FapplicationSquare%2Findex%3Fsid%3D2", data=payload)
+    r = s.post("https://app.ucas.ac.cn/uc/wap/login", data=payload)
 
     # print(r.text)
     if r.json().get('m') != "操作成功":
