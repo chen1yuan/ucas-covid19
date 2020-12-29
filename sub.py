@@ -20,8 +20,8 @@ debug = False
 verify_cert = False
 
 # 全局变量
-user = "USERNAME"
-passwd = "PASSWORD"+"$$"
+user = "chenyiyuan16@mails.ucas.ac.cn"
+passwd = "13735351253cyy"+"$$"
 api_key = "API_KEY"
 
 smtp_port = "SMTP_PORT"
@@ -51,6 +51,8 @@ def login(s: requests.Session, username, password):
         "username": username,
         "password": password
     }
+    print(payload)
+    
     r = s.post("https://app.ucas.ac.cn/uc/wap/login/check", data=payload)
 
     # print(r.text)
