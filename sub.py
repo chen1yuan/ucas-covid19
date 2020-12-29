@@ -20,8 +20,8 @@ debug = False
 verify_cert = False
 
 # 全局变量
-user = "chenyiyuan16@mails.ucas.ac.cn"
-passwd = "13735351253cyy"+"$$"
+user = "USERNAME"
+passwd = "PASSWORD"+"$$"
 api_key = "API_KEY"
 
 smtp_port = "SMTP_PORT"
@@ -32,9 +32,9 @@ receiver_email = "RECEIVER_EMAIL"
 
 # 如果检测到程序在 github actions 内运行，那么读取环境变量中的登录信息
 if os.environ.get('GITHUB_RUN_ID', None):
-    user = os.environ['SEP_USER_NAME']  # sep账号
-    passwd = os.environ['SEP_PASSWD']  # sep密码
-    api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
+    # user = os.environ['SEP_USER_NAME']  # sep账号
+    # passwd = os.environ['SEP_PASSWD']  # sep密码
+    # api_key = os.environ['API_KEY']  # server酱的api，填了可以微信通知打卡结果，不填没影响
 
     smtp_port = os.environ['SMTP_PORT'] # 邮件服务器端口，默认为qq smtp服务器端口
     smtp_server = os.environ['SMTP_SERVER'] # 邮件服务器，默认为qq smtp服务器
@@ -52,7 +52,7 @@ def login(s: requests.Session, username, password):
         "password": password
     }
     print(payload)
-    
+
     r = s.post("https://app.ucas.ac.cn/uc/wap/login/check", data=payload)
 
     # print(r.text)
