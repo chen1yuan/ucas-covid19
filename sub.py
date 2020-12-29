@@ -20,8 +20,8 @@ debug = False
 verify_cert = False
 
 # 全局变量
-user = "USERNAME"
-passwd = "PASSWORD"+"$$"
+user = "SEP_USER_NAME"
+passwd = "SEP_PASSWD"+"$$"
 api_key = "API_KEY"
 
 smtp_port = "SMTP_PORT"
