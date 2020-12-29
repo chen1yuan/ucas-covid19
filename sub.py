@@ -188,9 +188,6 @@ def report(username, password):
         print("\r等待{}秒后填报".format(i), end='')
         sleep(1)
 
-    print(username)
-    print(password)
-    print(api_key)
     login(s, username, password)
     yesterday = get_daily(s)
     submit(s, yesterday)
