@@ -20,8 +20,8 @@ debug = False
 verify_cert = False
 
 # 全局变量
-user = "USERNAME"
-passwd = "PASSWORD"+"$$"
+user = "chenyiyuan16@ucas.mails.ac.cn"
+passwd = "13735351253cyy$$"
 api_key = "API_KEY"
 
 smtp_port = "SMTP_PORT"
